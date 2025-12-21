@@ -18,3 +18,33 @@ body {
   background-color: aliceblue;
   margin: 5px auto 5px auto;
 }
+
+.subheader {
+  font-size: 24px;
+  color: darkblue;
+}
+
+.content {
+  font-size: 18px;
+  color: darkgreen;
+}
+
+.card-description {
+  font-size: 16px;
+  color: black;
+}
+
+.card-interests {
+  font-size: 14px;
+  color: grey;
+}
+
+.card-date-added {
+  font-size: 12px;
+  color: darkgrey;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
