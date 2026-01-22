@@ -96,7 +96,7 @@ def delete_user():
     if villain:
       db.session.delete(villain)
       db.session.commit()
-      return render_template("deletevillain.html", villains=Villain.query.all())
+      return render_template("deletevillain.html", villain=Villain.query.all())
   else:
     return render_template("deletevillain.html", errors=["Villain does not exist! Uh oh!"])
 

@@ -15,8 +15,8 @@
       <h2>No. 1 Female Super Villain Trading Card Game!</h2>
     </div>
     <div class="content">
-      <!-- <h3>Female Super Villains:</h3> -->
-      <!-- <p class="card-description">
+      <!-- <h3>Female Super Villains:</h3>
+      <p class="card-description">
         "I'll just be here. Messin' up your app. It'll probably take you 3 hours
         to find that one line of code that's destroying your life. Feel the
         rage. I feed on your anger and wasted time! Heh heh heh."
@@ -25,17 +25,16 @@
       <p class="card-interests">
         Breaking websites and apps, destroying your soul, making you question
         why you're learning programming to begin with.
-      </p>
-      <p class="card-date-added">Date added:</p>
-      <img class="card-image" src="{{villain.url}}" alt="Bugsy Betty" /> -->
+      </p> -->
+
       {% for villain in villains %}
       <div class="card">Card 1</div>
       <h3 class="card-name">{{villain.name}}</h3>
       <p class="card-description">{{villain.description}}</p>
       <h4>Interests:</h4>
       <p class="card-interests">{{villain.interests}}</p>
-      <p class="card-date-added">Date added: {{villain</p>
-      <img class="card-image" src="{{villain.url}}" alt="Bugsy Betty" />
+      <p class="card-date-added">Date added: {{villain.date_added}}</p>
+      <img class="card-image" src="{{villain.url}}" />
       {% endfor %}
     </div>
   </body>
