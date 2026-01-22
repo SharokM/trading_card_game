@@ -83,6 +83,22 @@ def add_user():
     db.session.commit()
     return render_template("villain.html", villains=Villain.query.all())
 
+@app.route("/delete", methods=["DELETE"])
+def delete_villain():
+  return render_template("deletevillain.html", errors=[])
+
+@app.route("/deleteVillain", methods=["POST"])
+def delete_user():
+  errors = []
+  name = request.form.get("name")
+  if villain:
+    villain = Villain.query.filter_by(name=name).first()
+    if villain:
+      db.session.delete(villain)
+      db.session.commit()
+      return render_template("deletevillain.html", villains=Villain.query.all())
+  else:
+    return render_template("deletevillain.html", errors=["Villain does not exist! Uh oh!"])
 
 def hello_world():
   return render_template("villain.html")
