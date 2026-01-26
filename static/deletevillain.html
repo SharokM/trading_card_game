@@ -6,6 +6,8 @@
   </script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="static/villain.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="static/deletevillain.js"></script>
 </head>
 
 <body>
@@ -21,14 +23,10 @@
   </div>
 
   <div class="content">
-    <form id="form" class="form" action="/deleteVillain" method="post">
+    <form id="form" class="form">
       <h2>REMOVE A CARD</h2>
       <div class="form-input">
-        <div id="errors">
-          {% for error in errors %}
-          <div class="error">{{ error }}</div>
-          {% endfor %}
-        </div>
+        <div id="errors"></div>
         <label for="delete-name">name</label>
         <input type="text" name="name" id="delete-name" />
       </div>

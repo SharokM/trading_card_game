@@ -55,7 +55,7 @@ def get_villains():
         "url": villain.url,
         "date_added": villain.date_added
     })
-    return
+  return jsonify(data)
 
 
 @app.route("/api/villains/add", methods=["POST"])
@@ -83,7 +83,7 @@ def add_villain():
     errors.append("Oops! A villain with that name already exists!")
 
   if errors:
-    return jsonify({"errors": errors})
+    return ({"errors": errors})
   else:
     new_villain = Villain(name=name,
                           description=description,
@@ -91,7 +91,7 @@ def add_villain():
                           url=url)
     db.session.add(new_villain)
     db.session.commit()
-    return ("villain.html", villains=Villain.query.all())
+    return jsonify({"status": "success"})
 
 
 @app.route("/api/villains/delete", methods=["POST"])
@@ -101,19 +101,9 @@ def delete_villain():
   if villain:
     db.session.delete(villain)
     db.session.commit()
-    return ("villain.html", villains=Villain.query.all())
+    return jsonify({"status": "success"})
   else:
-    return jsonify(
-        {"errors": ["Oops! A villain with that name doesn't exist!"]})
+    return ({"errors": ["Oops! A villain with that name doesn't exist!"]})
 
-@app.route("/api/", methods=["GET"])
-def get_endpoints():
-  endpoints = {
-    "/api/villains":"GET - this retrieves all villains in the DB",
-    "/api/villains/delete":"DELETE - this removes a villain from the DB",
-    "/api/villains/add":"POST - this adds a villain to the DB"
-  }
-
-  return jsonify(endpoints)
 
 app.run(host='0.0.0.0', port=8080)

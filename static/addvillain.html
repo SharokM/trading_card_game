@@ -10,6 +10,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="static/villain.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="static/addvillain.js"></script>
   </head>
 
   <body>
@@ -28,12 +30,8 @@
     <div class="content">
       <div class="form">
         <h2>ADD A CARD</h2>
-        <div id="errors">
-          {% for error in errors %}
-          <div class="error">{{ error }}</div>
-          {% endfor %}
-        </div>
-        <form id="form" action="/addVillain" method="post">
+        <div id="errors"></div>
+        <form id="form">
           <div class="form-input">
             <label for="name">name</label>
             <input type="text" name="name" id="name" />
