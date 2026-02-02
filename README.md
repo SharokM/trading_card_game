@@ -1,67 +1,79 @@
-# Install Python
+Superhero Trading Card Game
 
-Check to see if you already have Python installed on your system by running:
+Superhero Trading Card Game is a full-stack web application that displays superhero and villain trading cards. Users can view cards, add new cards, and delete existing cards through a simple web interface.
+The project uses a Python Flask backend with a SQLite database and a front-end built with HTML, CSS, JavaScript, and jQuery.
 
-On a Mac:
-`python3 --version`
+What This App Does
+Displays superhero / villain trading cards
+Shows character name, description, interests, image, and date added
+Allows users to add new cards using a form
+Allows users to delete cards by name
+Stores all card data in a SQLite database
+Uses API endpoints to communicate between frontend and backend
 
-On Windows:
-`python --version`
+Technologies Used
+Python
+Flask
+SQLite
+SQLAlchemy
+HTML5
+CSS3
+JavaScript
+jQuery
 
-If you already have Python installed, check to be sure it’s Python 3.8 or up. (For example, 3.11 is great!) We suggest waiting on 3.12 to give any dependencies time to be updated.
+Project Files
+app.py – Flask server, database models, and API routes
+villain.html – displays all trading cards
+addvillain.html – form to add a new card
+deletevillain.html – form to delete a card
+static/villain.js – fetches and displays cards
+static/addvillain.js – handles adding cards
+static/delete.js – handles deleting cards
+static/villain.css – styling
 
-If you are using a Windows machine, it is possible that you don’t have Python installed. You’ll need to pause here for a moment and proceed to install it. See this document for more [information](https://docs.google.com/document/d/14diNu_g6uhouBscRt8zIezolANTRQA6HobKRP4Lgu5Q/copy).
+Requirements
+To run this project, you need:
+Python 3
+pip
+A modern web browser
+Database Information
+Uses SQLite (villain.db)
 
-# Setting up to run scripts to work with Python.
+Database is created automatically when the app runs
 
-The script will be run in a virtual environment. Start by creating a virtual environment. Navigate to to the project folder in the command line and run:
+Stores:
+name
+description
+interests
+image URL
+date added
 
-On a Mac:
-`python3 -m venv venv`
+API Routes
+GET /api/villains/
+Returns all villains as JSON
 
-On Windows:
-`python -m venv venv`
+POST /api/villains/add
+Adds a new villain to the database
 
-<br>
-After creating the virtual environment, you need to activate it:
+POST /api/villains/delete
+Deletes a villain by name
 
-On a Mac:
-`source venv/bin/activate`
+How To Run The App
+Install dependencies
+pip install flask flask_sqlalchemy
 
-On Windows:
-`source venv/Scripts/activate`
+Run the server
+python app.py
 
-<br>
-Once the virtual environment is activated, the beginning of your terminal prompt should display (venv).
+Open in browser
+http://localhost:8080
 
-<br>
-Install the modules by running (in both a Mac and Windows):
+Notes
+This is a full-stack project
+No authentication or user accounts
+Form validation is handled on the backend
+Images are loaded using external URLs
 
-`pip install flask flask-sqlalchemy`
 
-You'll see a venv folder has been added to the directory with all of the installed dependencies.
-
-<br>
-
-To run your code, in the command line run:
-
-Without a debugger:
-`flask run`
-
-With a debugger:
-`flask run --debug`
-
-<br>
-
-The app will run at: http://127.0.0.1:5000/
-
-<br>
-
-To stop the run, click control + C. When making changes to your Python, HTML, or JavaScript code (and not using debugger) you'll need to stop the run after each change. After restarting the server, hard refresh the page.
-
-<br>
-When finished, quit the run by clicking control + C and close the virtual environment by running:
-
-`deactivate`
-
-<br>
+S McDonnaugh
+Superhero Trading Card Game
