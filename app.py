@@ -1,8 +1,9 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
-app = Flask("app")
+# app = Flask("app")
+app = Flask(__name__, static_folder="static", template_folder=".")
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///villain.db"
 db = SQLAlchemy(app)
 
@@ -27,17 +28,21 @@ with app.app_context():
 #### Serving Static Files
 @app.route("/")
 def villain_cards():
-  return app.send_static_file("villain.html")
+  # return app.send_static_file("villain.html")
+    return send_from_directory(".", "villain.html")
 
 
 @app.route("/add")
 def add():
-  return app.send_static_file("addvillain.html")
+  # return app.send_static_file("addvillain.html")
+    return send_from_directory(".", "addvillain.html")
+
 
 
 @app.route("/delete")
 def delete():
-  return app.send_static_file("deletevillain.html")
+  # return app.send_static_file("deletevillain.html")
+    return send_from_directory(".", "deletevillain.html")
 
 
 ####
@@ -105,4 +110,7 @@ def delete_villain():
   else:
     return ({"errors": ["Oops! A villain with that name doesn't exist!"]})
 
-app.run(host='0.0.0.0', port=8080)
+# app.run(host='0.0.0.0', port=8080)
+
+if __name__ == "__main__":
+    app.run()
