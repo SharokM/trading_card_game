@@ -1,79 +1,50 @@
-Superhero Trading Card Game
+Suprhero Trading Card Web App 🎴
 
-Superhero Trading Card Game is a full-stack web application that displays superhero and villain trading cards. Users can view cards, add new cards, and delete existing cards through a simple web interface.
-The project uses a Python Flask backend with a SQLite database and a front-end built with HTML, CSS, JavaScript, and jQuery.
+A full-stack Python + Flask web application to manage villain trading cards. Users can view, add, and delete villains, each with a name, description, interests, and image. The app is hosted live on Replit, requiring no setup to run.
 
-What This App Does
-Displays superhero / villain trading cards
-Shows character name, description, interests, image, and date added
-Allows users to add new cards using a form
-Allows users to delete cards by name
-Stores all card data in a SQLite database
-Uses API endpoints to communicate between frontend and backend
+🔗 Live Demo
 
-Technologies Used
-Python
-Flask
-SQLite
-SQLAlchemy
-HTML5
-CSS3
-JavaScript
-jQuery
+Access the running app here:
+Live on Replit - https://be5b015e-06bd-402f-b273-6f70823bd460-00-lu7qpv2wjsck.kirk.replit.dev/
 
-Project Files
-app.py – Flask server, database models, and API routes
-villain.html – displays all trading cards
-addvillain.html – form to add a new card
-deletevillain.html – form to delete a card
-static/villain.js – fetches and displays cards
-static/addvillain.js – handles adding cards
-static/delete.js – handles deleting cards
-static/villain.css – styling
+Features
+View Villains – Browse all villain cards.
+Add Villains – Submit new villains with all details.
+Delete Villains – Remove villains by name.
+Database Tracking – Stores date added automatically.
+Tech Stack
+Python 3.12 🐍
+Flask – Web framework
+SQLite – Lightweight database
+Gunicorn – Production-ready WSGI server
+Replit – Hosting and live deployment
+🚀 Running Locally (Optional)
 
-Requirements
-To run this project, you need:
-Python 3
-pip
-A modern web browser
-Database Information
-Uses SQLite (villain.db)
+To run the app locally for development:
 
-Database is created automatically when the app runs
+Clone the repository:
+git clone https://github.com/SharokM/trading_card_game.git
+cd trading_card_game/trading_card_app
+Create and activate a virtual environment:
+python3 -m venv venv
+source venv/bin/activate
+Install dependencies:
+pip install -r requirements.txt
+Run the app using Gunicorn:
+python -m gunicorn --bind 0.0.0.0:5000 app:app
+Open your browser at http://localhost:5000.
 
-Stores:
-name
-description
-interests
-image URL
-date added
+Note: Local setup is optional. The Replit deployment runs the app fully without additional configuration.
 
-API Routes
-GET /api/villains/
-Returns all villains as JSON
+Development & Contribution
 
-POST /api/villains/add
-Adds a new villain to the database
+Contributions are welcome! To contribute:
 
-POST /api/villains/delete
-Deletes a villain by name
+Fork the repository
+Create a feature branch (git checkout -b feature/my-feature)
+Commit your changes (git commit -m "Add my feature")
+Push to the branch (git push origin feature/my-feature)
+Create a Pull Request
+Author
 
-How To Run The App
-Install dependencies
-pip install flask flask_sqlalchemy
-
-Run the server
-python app.py
-
-Open in browser
-http://localhost:8080
-
-Notes
-This is a full-stack project
-No authentication or user accounts
-Form validation is handled on the backend
-Images are loaded using external URLs
-
-
-S McDonnaugh
-Superhero Trading Card Game
+Sharok McDonnaugh – GitHub
