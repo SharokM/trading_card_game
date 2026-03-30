@@ -23,7 +23,4 @@ Replit – Hosting and live deployment
 
 The Replit deployment runs the app fully without additional configuration.
 
-
-Contributions are welcome!
-
 Sharok McDonnaugh – GitHub
