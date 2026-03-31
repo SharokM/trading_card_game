@@ -1,9 +1,12 @@
 from flask import Flask, request, jsonify, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+import os
 
 app = Flask(__name__, static_folder="static", template_folder=".")
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///villain.db"
+basedir = os.path.abspath(os.path.dirname(__file__))
+db_path = os.path.join(basedir, 'villain.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + db_path
 db = SQLAlchemy(app)
 
 

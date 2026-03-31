@@ -193,7 +193,6 @@ button:hover {
   padding: 10px;
 }
 
-/* * Visually hidden class for accessibility */
 .visually-hidden {
   position: absolute;
   width: 1px;
