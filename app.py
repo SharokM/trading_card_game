@@ -30,19 +30,15 @@ with app.app_context():
 #### Serving Static Files
 @app.route("/")
 def villain_cards():
-    return send_from_directory(".", "villain.html")
-
+    return app.send_static_file("villain.html")
 
 @app.route("/add")
 def add():
-    return send_from_directory(".", "addvillain.html")
-
-
+    return app.send_static_file("addvillain.html")
 
 @app.route("/delete")
 def delete():
-    return send_from_directory(".", "deletevillain.html")
-
+    return app.send_static_file("deletevillain.html")
 
 
 
