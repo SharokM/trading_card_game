@@ -35,5 +35,52 @@
     </div>
 
     <div class="content"></div>
+
+    <script>
+      const container = document.querySelector(".content");
+
+      fetch("/api/villains/")
+        .then((res) => res.json())
+        .then((data) => {
+          // If DB is empty, use placeholders
+          const villains = data.length
+            ? data
+            : [
+                {
+                  name: "Dr. Doom",
+                  description: "Master of doom and science",
+                  interests: "Conquering the world, tech gadgets",
+                  url: "static/images/drdoom.png",
+                },
+                {
+                  name: "Mystique",
+                  description: "Shapeshifting mutant",
+                  interests: "Espionage, disguise",
+                  url: "static/images/mystique.png",
+                },
+                {
+                  name: "Joker",
+                  description: "Agent of chaos",
+                  interests: "Pranks, crime",
+                  url: "static/images/joker.png",
+                },
+              ];
+
+          villains.forEach((villain) => {
+            const card = document.createElement("div");
+            card.className = "villain-card";
+
+            card.innerHTML = `
+          <img src="${villain.url}" alt="${villain.name}" />
+          <h3>${villain.name}</h3>
+          <p>${villain.description}</p>
+          <small>Interests: ${villain.interests}</small>
+        `;
+
+            container.appendChild(card);
+          });
+        })
+        .catch((err) => console.error("Error fetching villains:", err));
+    </script>
   </body>
 </html>
