@@ -90,14 +90,18 @@
 
           villains.forEach((villain) => {
             const card = document.createElement("div");
-            card.className = "villain-card";
+            card.className = "card"; // this is key for CSS styling
 
             card.innerHTML = `
-          <img src="${villain.url}" alt="${villain.name}" />
-          <h3>${villain.name}</h3>
-          <p>${villain.description}</p>
-          <small>Interests: ${villain.interests}</small>
-        `;
+    <img src="${villain.url}" class="card-image" alt="${villain.name}" />
+    <h2 class="card-name">${villain.name}</h2>
+    <div class="card-body">
+      <p class="card-description">${villain.description}</p>
+      <h4>Interests</h4>
+      <p class="card-interests">${villain.interests}</p>
+      <p class="card-date-added">Date added: ${villain.date_added}</p>
+    </div>
+  `;
 
             container.appendChild(card);
           });
