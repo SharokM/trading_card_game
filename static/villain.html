@@ -43,121 +43,121 @@
         .then((res) => res.json())
         .then((data) => {
           // If DB is empty, use placeholders
-          const villains = data.length
-            ? data
-            : [
-                {
-                  name: "Dr. Doom",
-                  description:
-                    "Doctor Doom, real name Victor Von Doom, is a genius inventor and sorcerer from Latveria. He dons a metal armor and mask, ruling his nation with iron-fisted control. Driven by intellect and ambition, he seeks ultimate power, often clashing with the Fantastic Four, blending science and dark magic.",
-                  interests: "Conquering the world, SPF Creams",
-                  url: "https://cdna.artstation.com/p/assets/images/images/072/969/726/large/oskar-manuel-doom.jpg?1708610518",
-                  date_added: "2026-01-05",
-                },
-                {
-                  name: "Mystique",
-                  description:
-                    "Mystique, aka Raven Darkhölme, is a master shapeshifter and skilled combatant in the Marvel Universe. She can mimic anyone’s appearance and voice, making her a cunning spy and mercenary. Loyal to mutant causes yet morally ambiguous, she often clashes with X-Men, using deception, strategy, and stealth to achieve her goals.",
-                  interests: "Espionage, Hiking",
-                  url: "https://cdnb.artstation.com/p/assets/images/images/057/849/381/large/kevin-chua-mystique-fan-art.jpg?1672824571",
-                  date_added: "2026-01-05",
-                },
-                {
-                  name: "Joker",
-                  description:
-                    "The Joker is Gotham’s chaotic arch-nemesis of Batman, a criminal mastermind with a sadistic sense of humor. Known for his clown-like appearance, green hair, and maniacal laugh, he thrives on chaos, anarchy, and psychological torment, blending cunning intellect with unpredictability, making him one of the most dangerous and iconic villains in comics.",
-                  interests: "Stand-up Comedy, Crime",
-                  url: "https://i.pinimg.com/736x/18/57/c1/1857c1dd7c162052bc52de3fcf1cccfd.jpg",
-                  date_added: "2026-01-05",
-                },
-                {
-                  name: "Icon",
-                  description:
-                    "The superhero Icon, aka Augustus Freeman, is a nearly immortal alien who crash-landed on Earth in the 19th century. Possessing super strength, flight, and advanced intellect, he fights for justice while navigating human society. Icon often mentors younger heroes, blending cosmic power with wisdom and moral integrity",
-                  interests: "Pranks, Sandwiches",
-                  url: "https://i.redd.it/osok8xkcna271.jpg",
-                  date_added: "2026-01-05",
-                },
-                {
-                  name: "Storm",
-                  description:
-                    "Storm, real name Ororo Munroe, is a powerful mutant and member of the X-Men. She can control weather, summon lightning, wind, and rain, and fly. A skilled strategist and leader, Storm combines her powers with courage and compassion, often serving as a mentor and protector for mutantkind.",
-                  interests: "Storm Chasing, Kite Surfing",
-                  url: "https://marveltoynews.com/wp-content/uploads/2021/06/Sideshow-X-Men-Storm-Statue-2021-Premium-Format-Figure-Quarter-Scale.jpg",
-                  date_added: "2026-01-05",
-                },
-                {
-                  name: "Supergirl",
-                  description:
-                    "Supergirl, cousin of Superman, is a powerful Kryptonian hero fighting to protect Earth. Possessing super strength, flight, heat vision, and invulnerability, she balances her alien heritage with human life. Brave, compassionate, and determined, she inspires hope, combats injustice, and stands as a symbol of courage, resilience, and heroism for all.",
-                  interests: "Walking Krypto, Booze",
-                  url: "https://img.artpal.com/475392/7-23-11-1-9-55-54m.jpg",
-                  date_added: "2026-01-05",
-                },
-                {
-                  name: "Poison Ivy",
-                  description:
-                    "Poison Ivy, the cunning eco-terrorist, wields the power of plants to protect nature at any cost. Using toxins, mind-controlling pheromones, and botanical mastery, she battles heroes and manipulates the environment. Fierce, intelligent, and morally complex, she walks the line between villainy and guardianship of the natural world.",
-                  interests: "Gardening, ASMR",
-                  url: "https://shop.thirdeyecomics.com/cdn/shop/files/dc-comics-comic-books-poison-ivy-33-cvr-c-kyuyong-eom-card-stock-var-76194137625703331-0325dc131-1133457092.jpg?v=1762988947",
-                  date_added: "2026-01-05",
-                },
-                {
-                  name: "Static",
-                  description:
-                    "Captain Valor is a fearless superhero dedicated to protecting his city from crime and chaos. With super strength, agility, and a heart of gold, he inspires hope in citizens. Using his intellect and courage, he battles villains, rescues the innocent, and stands as a symbol of justice and honor.",
-                  interests: "Chess, Netflix Days",
-                  url: "https://static.dc.com/dc/files/default_images/Char_Thumb_Static_6018aa308e0c49.55491377.jpg",
-                  date_added: "2026-01-05",
-                },
-                {
-                  name: "Powergirl",
-                  description:
-                    "Power Girl, also known as Kara Zor-L, is a Kryptonian superhero from an alternate Earth. She possesses super strength, flight, heat vision, and invulnerability. Bold, confident, and fiercely independent, she fights evil while balancing heroics with a witty personality. Power Girl inspires courage, resilience, and hope wherever she goes.",
-                  interests: "Meditation, Trials by Combat",
-                  url: "https://the616comics.com/cdn/shop/files/0E2785EB-2555-4528-B014-475AE45DDB87_1024x1024@2x.jpg?v=1693929471",
-                  date_added: "2026-01-05",
-                },
-                {
-                  name: "Legion",
-                  description:
-                    "Legion, son of Professor X, is a powerful mutant with multiple personalities, each controlling unique abilities like telepathy, telekinesis, and reality-warping powers. Struggling with mental instability, he fights both inner demons and external threats. Despite challenges, Legion’s immense power and unpredictability make him a complex and formidable hero.",
-                  interests: "Escape Rooms, Pie",
-                  url: "https://i.pinimg.com/originals/b3/e6/f1/b3e6f1b555f78ae04abb87426e676738.jpg",
-                  date_added: "2026-01-05",
-                },
-                {
-                  name: "Harley Quinn",
-                  description:
-                    "Harley Quinn, former psychiatrist turned unpredictable antihero, blends chaotic humor with cunning intelligence. Skilled in acrobatics, combat, and explosives, she thrives on mischief and challenges authority. Loyal yet self-serving, Harley’s colorful personality, love for mayhem, and complex relationship with the Joker make her a dangerous yet strangely charming force in the DC Universe.",
-                  interests: "Jokes, Puddin'",
-                  url: "https://static.wikia.nocookie.net/heroes-fr/images/d/d7/Harley_Quinn_Comics_2.png/revision/latest?cb=20200815123337&path-prefix=fr",
-                  date_added: "2026-01-05",
-                },
-                {
-                  name: "Blue Marvel",
-                  description:
-                    "Blue Marvel is a brilliant scientist and superhero with superhuman strength, speed, flight, and energy manipulation. A former Marine and academic, he fights for justice while confronting prejudice and ethical dilemmas. Intelligent, courageous, and morally grounded, Blue Marvel combines brains and brawn to protect humanity from threats both terrestrial and cosmic.",
-                  interests: "Social Justice, Seclusion",
-                  url: "https://static.comicvine.com/uploads/original/0/7666/1157202-adam__014.jpg",
-                  date_added: "2026-01-05",
-                },
-              ];
+          const placeholders = [
+            {
+              name: "Dr. Doom",
+              description:
+                "Doctor Doom, real name Victor Von Doom, is a genius inventor and sorcerer from Latveria. He dons a metal armor and mask, ruling his nation with iron-fisted control. Driven by intellect and ambition, he seeks ultimate power, often clashing with the Fantastic Four, blending science and dark magic.",
+              interests: "Conquering the world, SPF Creams",
+              url: "https://cdna.artstation.com/p/assets/images/images/072/969/726/large/oskar-manuel-doom.jpg?1708610518",
+              date_added: "2026-01-05",
+            },
+            {
+              name: "Mystique",
+              description:
+                "Mystique, aka Raven Darkhölme, is a master shapeshifter and skilled combatant in the Marvel Universe. She can mimic anyone’s appearance and voice, making her a cunning spy and mercenary. Loyal to mutant causes yet morally ambiguous, she often clashes with X-Men, using deception, strategy, and stealth to achieve her goals.",
+              interests: "Espionage, Hiking",
+              url: "https://cdnb.artstation.com/p/assets/images/images/057/849/381/large/kevin-chua-mystique-fan-art.jpg?1672824571",
+              date_added: "2026-01-05",
+            },
+            {
+              name: "Joker",
+              description:
+                "The Joker is Gotham’s chaotic arch-nemesis of Batman, a criminal mastermind with a sadistic sense of humor. Known for his clown-like appearance, green hair, and maniacal laugh, he thrives on chaos, anarchy, and psychological torment, blending cunning intellect with unpredictability, making him one of the most dangerous and iconic villains in comics.",
+              interests: "Stand-up Comedy, Crime",
+              url: "https://i.pinimg.com/736x/18/57/c1/1857c1dd7c162052bc52de3fcf1cccfd.jpg",
+              date_added: "2026-01-05",
+            },
+            {
+              name: "Icon",
+              description:
+                "The superhero Icon, aka Augustus Freeman, is a nearly immortal alien who crash-landed on Earth in the 19th century. Possessing super strength, flight, and advanced intellect, he fights for justice while navigating human society. Icon often mentors younger heroes, blending cosmic power with wisdom and moral integrity",
+              interests: "Pranks, Sandwiches",
+              url: "https://i.redd.it/osok8xkcna271.jpg",
+              date_added: "2026-01-05",
+            },
+            {
+              name: "Storm",
+              description:
+                "Storm, real name Ororo Munroe, is a powerful mutant and member of the X-Men. She can control weather, summon lightning, wind, and rain, and fly. A skilled strategist and leader, Storm combines her powers with courage and compassion, often serving as a mentor and protector for mutantkind.",
+              interests: "Storm Chasing, Kite Surfing",
+              url: "https://marveltoynews.com/wp-content/uploads/2021/06/Sideshow-X-Men-Storm-Statue-2021-Premium-Format-Figure-Quarter-Scale.jpg",
+              date_added: "2026-01-05",
+            },
+            {
+              name: "Supergirl",
+              description:
+                "Supergirl, cousin of Superman, is a powerful Kryptonian hero fighting to protect Earth. Possessing super strength, flight, heat vision, and invulnerability, she balances her alien heritage with human life. Brave, compassionate, and determined, she inspires hope, combats injustice, and stands as a symbol of courage, resilience, and heroism for all.",
+              interests: "Walking Krypto, Booze",
+              url: "https://img.artpal.com/475392/7-23-11-1-9-55-54m.jpg",
+              date_added: "2026-01-05",
+            },
+            {
+              name: "Poison Ivy",
+              description:
+                "Poison Ivy, the cunning eco-terrorist, wields the power of plants to protect nature at any cost. Using toxins, mind-controlling pheromones, and botanical mastery, she battles heroes and manipulates the environment. Fierce, intelligent, and morally complex, she walks the line between villainy and guardianship of the natural world.",
+              interests: "Gardening, ASMR",
+              url: "https://shop.thirdeyecomics.com/cdn/shop/files/dc-comics-comic-books-poison-ivy-33-cvr-c-kyuyong-eom-card-stock-var-76194137625703331-0325dc131-1133457092.jpg?v=1762988947",
+              date_added: "2026-01-05",
+            },
+            {
+              name: "Static",
+              description:
+                "Captain Valor is a fearless superhero dedicated to protecting his city from crime and chaos. With super strength, agility, and a heart of gold, he inspires hope in citizens. Using his intellect and courage, he battles villains, rescues the innocent, and stands as a symbol of justice and honor.",
+              interests: "Chess, Netflix Days",
+              url: "https://static.dc.com/dc/files/default_images/Char_Thumb_Static_6018aa308e0c49.55491377.jpg",
+              date_added: "2026-01-05",
+            },
+            {
+              name: "Powergirl",
+              description:
+                "Power Girl, also known as Kara Zor-L, is a Kryptonian superhero from an alternate Earth. She possesses super strength, flight, heat vision, and invulnerability. Bold, confident, and fiercely independent, she fights evil while balancing heroics with a witty personality. Power Girl inspires courage, resilience, and hope wherever she goes.",
+              interests: "Meditation, Trials by Combat",
+              url: "https://the616comics.com/cdn/shop/files/0E2785EB-2555-4528-B014-475AE45DDB87_1024x1024@2x.jpg?v=1693929471",
+              date_added: "2026-01-05",
+            },
+            {
+              name: "Legion",
+              description:
+                "Legion, son of Professor X, is a powerful mutant with multiple personalities, each controlling unique abilities like telepathy, telekinesis, and reality-warping powers. Struggling with mental instability, he fights both inner demons and external threats. Despite challenges, Legion’s immense power and unpredictability make him a complex and formidable hero.",
+              interests: "Escape Rooms, Pie",
+              url: "https://i.pinimg.com/originals/b3/e6/f1/b3e6f1b555f78ae04abb87426e676738.jpg",
+              date_added: "2026-01-05",
+            },
+            {
+              name: "Harley Quinn",
+              description:
+                "Harley Quinn, former psychiatrist turned unpredictable antihero, blends chaotic humor with cunning intelligence. Skilled in acrobatics, combat, and explosives, she thrives on mischief and challenges authority. Loyal yet self-serving, Harley’s colorful personality, love for mayhem, and complex relationship with the Joker make her a dangerous yet strangely charming force in the DC Universe.",
+              interests: "Jokes, Puddin'",
+              url: "https://static.wikia.nocookie.net/heroes-fr/images/d/d7/Harley_Quinn_Comics_2.png/revision/latest?cb=20200815123337&path-prefix=fr",
+              date_added: "2026-01-05",
+            },
+            {
+              name: "Blue Marvel",
+              description:
+                "Blue Marvel is a brilliant scientist and superhero with superhuman strength, speed, flight, and energy manipulation. A former Marine and academic, he fights for justice while confronting prejudice and ethical dilemmas. Intelligent, courageous, and morally grounded, Blue Marvel combines brains and brawn to protect humanity from threats both terrestrial and cosmic.",
+              interests: "Social Justice, Seclusion",
+              url: "https://static.comicvine.com/uploads/original/0/7666/1157202-adam__014.jpg",
+              date_added: "2026-01-05",
+            },
+          ];
+
+          const villains = [...placeholders, ...data];
 
           villains.forEach((villain) => {
             const card = document.createElement("div");
             card.className = "card"; // this is key for CSS styling
 
             card.innerHTML = `
-    <img src="${villain.url}" class="card-image" alt="${villain.name}" />
-    <h2 class="card-name">${villain.name}</h2>
-    <div class="card-body">
-      <p class="card-description">${villain.description}</p>
-      <h4>Interests</h4>
-      <p class="card-interests">${villain.interests}</p>
-      <p class="card-date-added">Date added: ${villain.date_added}</p>
-    </div>
-  `;
+        <img src="${villain.url}" class="card-image" alt="${villain.name}" />
+        <h2 class="card-name">${villain.name}</h2>
+        <div class="card-body">
+          <p class="card-description">${villain.description}</p>
+          <h4>Interests</h4>
+          <p class="card-interests">${villain.interests}</p>
+          <p class="card-date-added">Date added: ${villain.date_added}</p>
+        </div>
+      `;
 
             container.appendChild(card);
           });
